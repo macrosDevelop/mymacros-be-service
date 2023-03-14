@@ -2,25 +2,35 @@
  * Express router paths go here.
  */
 
-import { Immutable } from '@src/other/types';
-
+import { Immutable } from "@src/other/types";
 
 const Paths = {
-  Base: '/api',
+  Base: "/api",
   Auth: {
-    Base: '/auth',
-    Login: '/login',
-    Logout: '/logout',
+    Base: "/auth",
+    Login: "/login",
+    Logout: "/logout",
   },
   Users: {
-    Base: '/users',
-    Get: '/all',
-    Add: '/add',
-    Update: '/update',
-    Delete: '/delete/:id',
+    Base: "/users",
+    Get: "/all",
+    Add: "/add",
+    Update: "/update",
+    Delete: "/delete/:id",
+  },
+  Test: {
+    Base: "/test",
+    Get: "/get-test",
+  },
+  Frontend: {
+    Base: "/frontend",
+    Get: "/get-command-1",
+  },
+  Microcontroller: {
+    Base: "/microcontroller",
+    Get: "/command-1",
   },
 };
-
 
 // **** Export **** //
 
