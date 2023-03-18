@@ -25,6 +25,7 @@ const Paths = {
   Frontend: {
     Base: "/frontend",
     Get: "/get-command-1",
+    Post:"/post-command"
   },
   Microcontroller: {
     Base: "/microcontroller",

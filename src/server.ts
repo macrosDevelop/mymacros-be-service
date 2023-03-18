@@ -28,7 +28,7 @@ const app = express();
 // **** Setup **** //
 
 // CORS
-app.use(cors({ origin: "http://localhost:3000" }));
+// app.use(cors({ origin: "http://localhost:3000" }));
 
 // Basic middleware
 app.use(express.json());
