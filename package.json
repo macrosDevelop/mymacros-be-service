@@ -1,6 +1,6 @@
 {
   "name": "mymacros-be-service",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "build": "npx ts-node build.ts",
     "lint": "npx eslint --ext .ts src/",

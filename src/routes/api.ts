@@ -80,7 +80,6 @@ feRouter.get(Paths.Frontend.Get, FrontendRoutes.getCommand);
 
 feRouter.post(Paths.Frontend.Post, FrontendRoutes.postCommand);
 
-
 // Add feRouter
 apiRouter.use(Paths.Frontend.Base, feRouter);
 
