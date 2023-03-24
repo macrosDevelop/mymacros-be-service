@@ -27,10 +27,6 @@ const Paths = {
     Get: "/get-command-1",
     Post: "/post-command",
   },
-  Microcontroller: {
-    Base: "/microcontroller",
-    Get: "/command-1",
-  },
 };
 
 // **** Export **** //

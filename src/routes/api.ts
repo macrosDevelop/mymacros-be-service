@@ -7,7 +7,6 @@ import User from "@src/models/User";
 import AuthRoutes from "./AuthRoutes";
 import UserRoutes from "./UserRoutes";
 import TestRoutes from "./TestRoutes";
-import MicrocontrollerRoutes from "./MicrocontrollerRoutes";
 import FrontendRoutes from "./FrontendRoutes";
 
 // **** Variables **** //
@@ -72,25 +71,25 @@ testRouter.get(Paths.Test.Get, TestRoutes.getTest);
 // Add TestRouter
 apiRouter.use(Paths.Test.Base, testRouter);
 
-/***   TEST API  ***/
+/***   FRONTEND API  ***/
 
 const feRouter = Router();
 
 feRouter.get(Paths.Frontend.Get, FrontendRoutes.getCommand);
 
-feRouter.post(Paths.Frontend.Post, FrontendRoutes.postCommand);
+// feRouter.post(
+//   Paths.Frontend.Post,
+//   validate(["comandi", FECommand.isCorrectCommand]),
+//   FrontendRoutes.postCommand
+// );
+feRouter.post(
+  Paths.Frontend.Post,
+  validate("comando"),
+  FrontendRoutes.postCommand
+);
 
 // Add feRouter
 apiRouter.use(Paths.Frontend.Base, feRouter);
-
-/***   TEST API  ***/
-
-const mcRouter = Router();
-
-mcRouter.post(Paths.Microcontroller.Get, MicrocontrollerRoutes.getCommand1);
-
-// Add mcRouter
-apiRouter.use(Paths.Microcontroller.Base, mcRouter);
 
 // **** Export default **** //
 
