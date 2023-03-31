@@ -7,11 +7,12 @@ import HttpStatusCodes from "@src/constants/HttpStatusCodes";
 import { RouteError } from "@src/other/classes";
 
 // interface
-import { IFEPostCommand } from "@src/models/Frontend";
+import { IFeErogationRecipe } from "@src/models/Frontend";
 import {
   IMicroGETResponse,
   IMicroPOSTResponse,
 } from "@src/models/Microcontroller";
+import Paths from "@src/routes/constants/Paths";
 
 // **** Variables **** //
 
@@ -49,14 +50,16 @@ async function getCommand(): Promise<IMicroGETResponse> {
   }
 }
 
-async function postCommand(body: IFEPostCommand): Promise<IMicroPOSTResponse> {
+async function erogationRecipe(
+  body: IFeErogationRecipe
+): Promise<IMicroPOSTResponse> {
   console.log("body", body);
   try {
     // invio della richiesta al microcontrollore
     const response = await axios({
       method: "post",
-      url: "https://run.mocky.io/v3/581e4ed7-57a9-4fd4-b9f0-8dad280a419a", // 200 OK
-      //   url: "http://192.168.0.225/ledoff",
+      // url: "https://run.mocky.io/v3/581e4ed7-57a9-4fd4-b9f0-8dad280a419a", // 200 OK
+      url: `${Paths.FeToBeToMicro.Microcontroller.Host}${Paths.FeToBeToMicro.Microcontroller.Post}`,
       headers: {
         connection: "keep-alive",
         "Content-Type": "application/json",
@@ -74,4 +77,4 @@ async function postCommand(body: IFEPostCommand): Promise<IMicroPOSTResponse> {
 
 // **** Export default **** //
 
-export default { getCommand, postCommand } as const;
+export default { getCommand, erogationRecipe } as const;

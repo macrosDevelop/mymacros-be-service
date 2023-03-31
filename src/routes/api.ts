@@ -75,7 +75,7 @@ apiRouter.use(Paths.Test.Base, testRouter);
 
 const feRouter = Router();
 
-feRouter.get(Paths.Frontend.Get, FrontendRoutes.getCommand);
+feRouter.get(Paths.FeToBeToMicro.Frontend.Get, FrontendRoutes.getCommand);
 
 // feRouter.post(
 //   Paths.Frontend.Post,
@@ -83,13 +83,13 @@ feRouter.get(Paths.Frontend.Get, FrontendRoutes.getCommand);
 //   FrontendRoutes.postCommand
 // );
 feRouter.post(
-  Paths.Frontend.Post,
+  Paths.FeToBeToMicro.Frontend.Post,
   validate("comando"),
-  FrontendRoutes.postCommand
+  FrontendRoutes.erogationRecipe
 );
 
 // Add feRouter
-apiRouter.use(Paths.Frontend.Base, feRouter);
+apiRouter.use(Paths.FeToBeToMicro.Frontend.Base, feRouter);
 
 // **** Export default **** //
 

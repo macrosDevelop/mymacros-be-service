@@ -8,7 +8,7 @@ const INVALID_CONSTRUCTOR_PARAM =
 /**
  * Types
  */
-export interface IFEPostCommand {
+export interface IFeErogationRecipe {
   comando: string;
 }
 

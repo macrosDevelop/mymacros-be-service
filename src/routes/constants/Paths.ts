@@ -22,10 +22,17 @@ const Paths = {
     Base: "/test",
     Get: "/get-test",
   },
-  Frontend: {
-    Base: "/frontend",
-    Get: "/get-command-1",
-    Post: "/post-command",
+  FeToBeToMicro: {
+    Frontend: {
+      Base: "/frontend",
+      Post: "/erogation-recipe",
+      Get: "/get-command-1",
+    },
+    Microcontroller: {
+      Host: "http://192.168.0.225",
+      Post: "/api/microcontroller/erogation-recipe",
+      Get: "/",
+    },
   },
 };
 

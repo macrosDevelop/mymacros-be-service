@@ -1,5 +1,5 @@
 // interface
-import { IFEPostCommand } from "@src/models/Frontend";
+import { IFeErogationRecipe } from "@src/models/Frontend";
 import FrontendService from "@src/services/FrontendService";
 import { IReq, IRes } from "./types/express/misc";
 
@@ -8,9 +8,9 @@ const getCommand = async (_: IReq, res: IRes) => {
   return res.status(response.status).json(response.data);
 };
 
-const postCommand = async (req: IReq<IFEPostCommand>, res: IRes) => {
-  const body = req.body;
-  const response = await FrontendService.postCommand(body);
+const erogationRecipe = async (req: IReq<IFeErogationRecipe>, res: IRes) => {
+  const body = req.body; // to obtain recipe from frontend
+  const response = await FrontendService.erogationRecipe(body);
   return res.status(response.status)?.json(response.data);
 };
 
@@ -18,5 +18,5 @@ const postCommand = async (req: IReq<IFEPostCommand>, res: IRes) => {
 
 export default {
   getCommand,
-  postCommand,
+  erogationRecipe,
 } as const;
